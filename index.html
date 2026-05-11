@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Largest Crocodile Skulls — An Open Database</title>
+<meta name="description" content="An open citizen-science database of the world's largest crocodilian skulls, with measurements consolidated from published sources.">
+<style>
+  :root {
+    --jade: #0B3D2E;
+    --jade-2: #15573E;
+    --jade-3: #1B7A4D;
+    --jade-4: #2D8F60;
+    --jade-light: #D5EBDD;
+    --jade-light-alt: #BFE0CC;
+    --cream: #FFFCF5;
+    --grey-1: #F4F1EA;
+    --grey-2: #D4CDBE;
+    --ink: #1B1A17;
+    --muted: #6B6557;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  header {
+    background: linear-gradient(135deg, var(--jade) 0%, var(--jade-2) 60%, var(--jade-3) 100%);
+    color: white;
+    padding: 40px 24px 32px;
+    text-align: center;
+  }
+  header h1 { margin: 0 0 8px; font-size: 32px; font-weight: 700; letter-spacing: -0.3px; }
+  header .subtitle { margin: 0; opacity: 0.9; font-size: 16px; }
+  header .meta { margin-top: 18px; opacity: 0.7; font-size: 13px; }
+  header .meta a { color: white; text-decoration: underline; }
+
+  .intro {
+    max-width: 900px;
+    margin: -28px auto 0;
+    background: white;
+    border: 1px solid var(--grey-2);
+    border-radius: 10px;
+    padding: 22px 26px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    position: relative;
+  }
+  .intro p { margin: 0 0 10px; }
+  .intro p:last-child { margin-bottom: 0; }
+
+  .top-section {
+    max-width: 1280px;
+    margin: 30px auto 0;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+  .panel {
+    background: white;
+    border: 1px solid var(--grey-2);
+    border-radius: 8px;
+    padding: 16px 18px;
+  }
+  .panel h3 {
+    margin: 0 0 12px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    color: var(--muted);
+    font-weight: 700;
+  }
+  .total-stat .value {
+    font-size: 44px;
+    font-weight: 700;
+    color: var(--jade);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .total-stat .label { font-size: 13px; color: var(--muted); }
+  .total-stat .sub { font-size: 12px; color: var(--muted); margin-top: 8px; }
+
+  .top5 ol {
+    margin: 0;
+    padding: 0;
+    counter-reset: rank;
+    list-style: none;
+  }
+  .top5 li {
+    counter-increment: rank;
+    padding: 7px 0;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    border-bottom: 1px solid var(--grey-1);
+    font-size: 13px;
+  }
+  .top5 li:last-child { border-bottom: 0; }
+  .top5 li::before {
+    content: counter(rank);
+    font-weight: 700;
+    color: var(--jade);
+    min-width: 18px;
+    font-size: 12px;
+  }
+  .top5 .num {
+    margin-left: auto;
+    font-weight: 700;
+    color: var(--jade);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .top5 .name { font-style: italic; color: var(--ink); line-height: 1.3; }
+  .top5 .name strong { font-style: normal; color: var(--jade); }
+  .top5 .name small { display: block; color: var(--muted); font-style: normal; font-size: 11px; }
+
+  .controls {
+    max-width: 1280px;
+    margin: 24px auto 0;
+    padding: 0 24px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: end;
+  }
+  .control { display: flex; flex-direction: column; gap: 4px; }
+  .control label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .control select {
+    padding: 8px 10px;
+    border: 1.5px solid var(--grey-2);
+    border-radius: 6px;
+    background: white;
+    font-size: 14px;
+    min-width: 240px;
+    font-family: inherit;
+  }
+  .control select:focus { outline: none; border-color: var(--jade-3); }
+  .row-count {
+    margin-left: auto;
+    font-size: 13px;
+    color: var(--muted);
+    padding-bottom: 8px;
+  }
+  .row-count strong { color: var(--ink); }
+
+  .table-wrap { max-width: 1280px; margin: 18px auto 0; padding: 0 24px; }
+  .table-scroll {
+    overflow-x: auto;
+    background: white;
+    border: 1px solid var(--grey-2);
+    border-radius: 8px;
+  }
+  table { border-collapse: collapse; width: 100%; font-size: 13.5px; min-width: 950px; }
+  thead th {
+    position: sticky;
+    top: 0;
+    background: var(--jade);
+    color: white;
+    padding: 10px 8px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    border-bottom: 2px solid var(--jade-2);
+  }
+  thead th.headline { background: var(--jade-3); }
+  thead th.sortable::after { content: " \21F5"; opacity: 0.4; font-size: 10px; }
+  thead th.sort-asc::after { content: " \2191"; opacity: 1; }
+  thead th.sort-desc::after { content: " \2193"; opacity: 1; }
+  thead th:hover { background: var(--jade-2); }
+  thead th.headline:hover { background: #166d44; }
+  tbody td { padding: 8px; border-bottom: 1px solid var(--grey-1); vertical-align: top; }
+  tbody tr:nth-child(even) { background: var(--grey-1); }
+  tbody tr:hover { background: var(--jade-light); }
+  td.num { font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+  td.headline { background: var(--jade-light); font-weight: 700; color: var(--jade); text-align: center; }
+  tbody tr:nth-child(even) td.headline { background: var(--jade-light-alt); }
+  td.species { font-style: italic; white-space: nowrap; }
+  td.specimen { font-weight: 600; color: var(--jade); }
+  td .est-tag { color: var(--muted); font-size: 11px; font-style: italic; }
+  td.notes { max-width: 300px; font-size: 12px; color: var(--muted); }
+  details.detail-row { margin: 0; }
+  details summary { cursor: pointer; color: var(--jade-3); font-size: 12px; }
+  details[open] summary { color: var(--jade); }
+
+  footer {
+    margin-top: 60px;
+    background: var(--jade);
+    color: white;
+    padding: 36px 24px;
+    text-align: center;
+  }
+  footer h3 { margin: 0 0 14px; font-size: 20px; }
+  footer p { margin: 0 0 8px; opacity: 0.85; font-size: 14px; }
+  footer a { color: #FDEBD0; }
+  footer .contribute-btn {
+    display: inline-block;
+    margin-top: 14px;
+    background: var(--jade-3);
+    color: white;
+    padding: 10px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+  footer .contribute-btn:hover { background: var(--jade-4); }
+  footer .sources {
+    margin-top: 24px;
+    font-size: 12px;
+    opacity: 0.7;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 900px) {
+    .top-section { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 720px) {
+    header h1 { font-size: 24px; }
+    header { padding: 28px 16px 24px; }
+    .intro { padding: 16px 18px; margin: -20px 16px 0; }
+    .controls { padding: 0 16px; }
+    .top-section { padding: 0 16px; }
+    .table-wrap { padding: 0 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Largest Crocodile Skulls</h1>
+  <p class="subtitle">An open database of the world's biggest crocodilian skulls</p>
+  <p class="meta"><a href="#contribute">How to contribute</a></p>
+</header>
+
+<section class="intro">
+  <p><strong>Why skulls?</strong> Many of the largest crocodiles ever recorded are known only from their skulls. A skull's length and width can be used to estimate the total length of the live animal it came from, so this database is part record-keeping, part detective work.</p>
+  <p>The data is open, the methodology is transparent, and every entry is sourced in the data itself. Contribute a specimen if you have verified measurements.</p>
+</section>
+
+<div class="top-section">
+  <div class="panel total-stat">
+    <h3>Specimens logged</h3>
+    <div class="value" id="stat-total">—</div>
+    <div class="label">across all species</div>
+    <div class="sub" id="stat-species">—</div>
+  </div>
+  <div class="panel top5">
+    <h3>Top 5 longest skulls (DCL)</h3>
+    <ol id="top5-longest"></ol>
+  </div>
+  <div class="panel top5">
+    <h3>Top 5 widest skulls (MHW)</h3>
+    <ol id="top5-widest"></ol>
+  </div>
+</div>
+
+<div class="controls">
+  <div class="control">
+    <label for="filter-species">Filter by species</label>
+    <select id="filter-species"><option value="">All species</option></select>
+  </div>
+  <div class="row-count">Showing <strong id="visible-count">0</strong> of <strong id="total-count">0</strong></div>
+</div>
+
+<div class="table-wrap">
+  <div class="table-scroll">
+    <table id="data-table">
+      <thead>
+        <tr>
+          <th data-sort="species" class="sortable">Species</th>
+          <th data-sort="specimen" class="sortable">Specimen</th>
+          <th data-sort="origin" class="sortable">Origin</th>
+          <th data-sort="location" class="sortable">Location</th>
+          <th data-sort="dcl_a" class="sortable headline">DCL_A (mm)</th>
+          <th data-sort="dcl_b" class="sortable">DCL_B (mm)</th>
+          <th data-sort="mhw" class="sortable headline">MHW (mm)</th>
+          <th data-sort="mcw" class="sortable">MCW (mm)</th>
+          <th data-sort="iow" class="sortable">IOW (mm)</th>
+          <th data-sort="tl" class="sortable headline">TL (cm)</th>
+          <th data-sort="mandible" class="sortable">Mandible (cm)</th>
+          <th data-sort="weight" class="sortable">Weight (kg)</th>
+          <th>Notes / Source</th>
+        </tr>
+      </thead>
+      <tbody id="data-rows"></tbody>
+    </table>
+  </div>
+</div>
+
+<footer id="contribute">
+  <h3>Contribute a specimen</h3>
+  <p>If you have verified measurements from a museum, paper, or private collection, we want to hear from you.</p>
+  <p>Every contribution needs a citable source: a published paper, museum record, or photograph of the skull with measurement context. All submissions are reviewed before being added.</p>
+  <a class="contribute-btn" href="https://github.com/" target="_blank">Submit on GitHub</a>
+  <div class="sources">
+    Data sources cited in the per-row Source column.<br>
+    Open data, free to use with attribution.
+  </div>
+</footer>
+
+<script>
+// Data is embedded inline so the page works locally without needing a server.
+// If you want to update, replace this DATA constant with the contents of data.json.
+const DATA = [{"id":1,"species":"Tomistoma schlegelii","common":"False Gharial (Tomistoma)","specimen":"","origin":"","location":"British Museum","dcl_a":840,"dcl_b":null,"mhw":null,"mcw":null,"iow":null,"tl":null,"tl_est":"","mandible":104,"weight":null,"teeth":null,"notes":"Largest crocodilian skull on record. Slender Tomistoma morphology - very different shape from C. porosus despite enormous DCL.","source":"private contributor, C. McCarthy (pers. comm.) in Whitaker & Whitaker 2008"},{"id":2,"species":"Tomistoma schlegelii","common":"False Gharial (Tomistoma)","specimen":"","origin":"Central Borneo, Indonesia","location":"Munich Museum","dcl_a":815,"dcl_b":null,"mhw":null,"mcw":null,"iow":null,"tl":null,"tl_est":"","mandible":null,"weight":null,"teeth":null,"notes":"","source":""},{"id":3,"species":"Gavialis gangeticus","common":"Indian Gharial","specimen":"","origin":"India","location":"Munich Museum","dcl_a":773,"dcl_b":null,"mhw":null,"mcw":null,"iow":null,"tl":null,"tl_est":"","mandible":null,"weight":null,"teeth":null,"notes":"","source":""},{"id":4,"species":"Tomistoma schlegelii","common":"False Gharial (Tomistoma)","specimen":"","origin":"Central Borneo, Indonesia","location":"Munich Museum","dcl_a":770,"dcl_b":null,"mhw":null,"mcw":null,"iow":null,"tl":null,"tl_est":"","mandible":null,"weight":null,"teeth":null,"notes":"","source":""},{"id":5,"species":"Tomistoma schlegelii","common":"False Gharial (Tomistoma)","specimen":"","origin":"Borneo","location":"Munich Museum","dcl_a":765,"dcl_b":null,"mhw":null,"mcw":null,"iow":null,"tl":null,"tl_est":"","mandible":null,"weight":null,"teeth":null,"notes":"","source":""},{"id":6,"species":"Tomistoma schlegelii","common":"False Gharial (Tomistoma)","specimen":"","origin":"","location":"AMNH, New York","dcl_a":763,"dcl_b":null,"mhw":null,"mcw":null,"iow":null,"tl":null,"tl_est":"","mandible":null,"weight":null,"teeth":null,"notes":"","source":""},{"id":7,"species":"Crocodylus porosus","common":"Saltwater (Estuarine)","specimen":"","origin":"Cambodia","location":"Paris Museum","dcl_a":760,"dcl_b":null,"mhw":480,"mcw":null,"iow":null,"tl":null,"tl_est":"","mandible":98.3,"weight":null,"teeth":null,"notes":124,"source":""},{"id":8,"species":"Tomistoma schlegelii","common":"False Gharial (Tomistoma)","specimen":"","origin":"","location":"Brussells Museum","dcl_a":759,"dcl_b":null,"mhw":null,"mcw":null,"iow":null,"tl":null,"tl_est":"","mandible":null,"weight":null,"teeth":null,"notes":"","source":""},{"id":9,"species":"Gavialis gangeticus","common":"Indian Gharial","specimen":"","origin":"India","location":"Parise Museum","dcl_a":753,"dcl_b":null,"mhw":null,"mcw":null,"iow":null,"tl":null,"tl_est":"","mandible":null,"weight":null,"teeth":null,"notes":"","source":""},{"id":10,"species":"Gavialis gangeticus","common":"Indian Gharial","specimen":"","origin":"India","location":"Munich Museum","dcl_a":750,"dcl_b":null,"mhw":null,"mcw":null,"iow":null,"tl":null,"tl_est":"","mandible":null,"weight":null,"teeth":null,"notes":"","source":""},{"id":11,"species":"Crocodylus porosus","common":"Saltwater (Estuarine)","specimen":"","origin":"","location":"Lennongrad?","dcl_a":740,"dcl_b":null,"mhw":null,"mcw":null,"iow":null,"tl":null,"tl_est":"","mandible":null,"weight":null,"teeth":null,"notes":"","source":""},{"id":12,"species":"Crocodylus acutus","common":"American","specimen":"","origin":"S.America","location":"AMNH, New York","dcl_a":735,"dcl_b":null,"mhw":null,"mcw":null,"iow":null,"tl":null,"tl_est":"","mandible":null,"weight":null,"teeth":null,"notes":"","source":""},{"id":13,"species":"Crocodylus porosus","common":"Saltwater (Estuarine)","specimen":"","origin":"Bhitakanika, India","location":"Raja of Kanika","dcl_a":733,"dcl_b":null,"mhw":458,"mcw":null,"iow":null,"tl":700,"tl_est":"Y","mandible":null,"weight":null,"teeth":null,"notes":119.1,"source":5.877},{"id":14,"species":"Crocodylus porosus","common":"Saltwater (Estuarine)","specimen":"","origin":"India","location":"India Museum, Kulkutta","dcl_a":730,"dcl_b":null,"mhw":390,"mcw":null,"iow":null,"tl":null,"tl_est":"","mandible":92,"weight":null,"teeth":null,"notes":112,"source":""},{"id":15,"species":"Crocodylus porosus","common":"Saltwater (Estuarine)","specimen":"Fly River Giant","origin":"Fly River, Papua New Guinea","location":"Australia (collection TBC)","dcl_a":728,"dcl_b":null,"mhw":371,"mcw":219,"iow":80,"tl":null,"tl_est":"","mandible":91.6,"weight":null,"teeth":null,"notes":"FLY RIVER GIANT. Possibly the largest saltwater crocodile skull in Australia. Measurements verified by Roger Matthews. Some millimetres missing from rear of bottom jaw where it was butchered off; missing portion not added to skull total length. Skull total length (snout to back of mandible): 94.6 cm. Skull weight: 21.4 kg. ADDITIONAL MEASUREMENTS NOT IN STANDARD FIELDS: Snout/nose width 17.4 cm; Width across squamosal 'horns' (MCW): 21.9 cm; Mandible width: 6 cm; Width between bottom jaw hinges: 17.4 cm; Snout width horizontal at tip: 7.7 cm; Snout width vertical at tip: 5.8 cm; Height of skull: 30.3 cm; Mandible front teeth diameter: 2.9 cm; Top jaw main teeth diameter: 3.1 cm; Vertebrate (occipital) condyle ball: 4.3 x 5.1 cm; Back of horns to tip of nose: 76.1 cm. Live-animal TL unknown - skull-only specimen. Estimated live TL from Combined Ratio (5.4 multiplier): ~5.94 m. Skull is unusually slender (W:L ~51%) for a C. porosus this large - on the lower end of saltie range (typical 64-74%).","source":"Verified by Roger Matthews; provided by anonymous contributor (Australian collection)"},{"id":16,"species":"Crocodylus porosus","common":"Saltwater (Estuarine)","specimen":"","origin":"Obo, Fly River, Papua New Guinea","location":"Wildlife department PNG","dcl_a":720,"dcl_b":null,"mhw":null,"mcw":null,"iow":null,"tl":620,"tl_est":"N","mandible":null,"weight":null,"teeth":null,"notes":"","source":""},{"id":17,"species":"Crocodylus porosus","common":"Saltwater (Estuarine)","specimen":"","origin":"Bengal, India","location":"British Museum","dcl_a":711,"dcl_b":null,"mhw":null,"mcw":null,"iow":null,"tl":null,"tl_est":"","mandible":91.4,"weight":null,"teeth":null,"notes":"","source":""},{"id":18,"species":"Crocodylus porosus","common":"Saltwater (Estuarine)","specimen":"","origin":"Sarawak, Malaysia","location":"Sarawak museum","dcl_a":711,"dcl_b":null,"mhw":null,"mcw":null,"iow":null,"tl":null,"tl_est":"","mandible":null,"weight":null,"teeth":null,"notes":"","source":""},{"id":19,"species":"Crocodylus porosus","common":"Saltwater (Estuarine)","specimen":"","origin":"India","location":"Indian Museum","dcl_a":710,"dcl_b":null,"mhw":350,"mcw":null,"iow":null,"tl":null,"tl_est":"","mandible":86,"weight":null,"teeth":null,"notes":106,"source":""},{"id":20,"species":"Crocodylus porosus","common":"Saltwater (Estuarine)","specimen":"Giryu","origin":"Unknown","location":"Lee Kong Chian Natural History Museum, Singapore","dcl_a":706,"dcl_b":null,"mhw":null,"mcw":205,"iow":67,"tl":null,"tl_est":"","mandible":null,"weight":null,"teeth":null,"notes":"","source":""},{"id":21,"species":"Tomistoma schlegelii","common":"False Gharial (Tomistoma)","specimen":"","origin":"","location":"MMNB Berlin","dcl_a":704,"dcl_b":null,"mhw":null,"mcw":null,"iow":null,"tl":null,"tl_est":"","mandible":null,"weight":null,"teeth":null,"notes":"","source":""},{"id":22,"species":"Gavialis gangeticus","common":"Indian Gharial","specimen":"","origin":"India","location":"","dcl_a":703,"dcl_b":null,"mhw":null,"mcw":null,"iow":null,"tl":null,"tl_est":"","mandible":null,"weight":null,"teeth":null,"notes":"","source":""},{"id":23,"species":"Crocodylus porosus","common":"Saltwater (Estuarine)","specimen":"Edgar","origin":"Java, Indonesia (1887)","location":"Lee Kong Chian Natural History Museum, Singapore","dcl_a":701,"dcl_b":682,"mhw":520,"mcw":240,"iow":80,"tl":670,"tl_est":"Y","mandible":null,"weight":null,"teeth":2,"notes":122.1,"source":5.487},{"id":24,"species":"Crocodylus porosus","common":"Saltwater (Estuarine)","specimen":"","origin":"Lolong","location":"","dcl_a":700,"dcl_b":694,"mhw":450,"mcw":228,"iow":84,"tl":617,"tl_est":"","mandible":null,"weight":null,"teeth":null,"notes":115,"source":5.365},{"id":25,"species":"Gavialis gangeticus","common":"Indian Gharial","specimen":"","origin":"India","location":"AMNH, New York","dcl_a":697,"dcl_b":null,"mhw":null,"mcw":null,"iow":null,"tl":null,"tl_est":"","mandible":null,"weight":null,"teeth":null,"notes":"","source":""},{"id":26,"species":"Crocodylus porosus","common":"Saltwater (Estuarine)","specimen":"Gomek","origin":"Fly River, Papua New Guinea","location":"St Augustine, Florida","dcl_a":690,"dcl_b":null,"mhw":null,"mcw":null,"iow":null,"tl":534,"tl_est":"N","mandible":null,"weight":null,"teeth":null,"notes":"","source":""},{"id":27,"species":"Crocodylus porosus","common":"Saltwater (Estuarine)","specimen":"Mary River specimen","origin":"Mary River, Australia ","location":"Corroberee, NT Australia","dcl_a":688,"dcl_b":null,"mhw":439,"mcw":null,"iow":null,"tl":564,"tl_est":"N","mandible":86,"weight":null,"teeth":null,"notes":112.7,"source":5.004},{"id":28,"species":"Crocodylus niloticus","common":"Nile","specimen":"","origin":"Lake Chomo, Ethiopia ","location":"Arba Minch, Ethiopia","dcl_a":686,"dcl_b":null,"mhw":404,"mcw":null,"iow":null,"tl":540,"tl_est":"Y","mandible":87,"weight":null,"teeth":null,"notes":109,"source":4.954},{"id":29,"species":"Crocodylus niloticus","common":"Nile","specimen":"","origin":"Lake Chomo, Ethiopia ","location":"Arba Minch, Ethiopia","dcl_a":679,"dcl_b":null,"mhw":414,"mcw":null,"iow":null,"tl":540,"tl_est":"Y","mandible":null,"weight":null,"teeth":null,"notes":109.3,"source":4.941},{"id":30,"species":"Tomistoma schlegelii","common":"False Gharial (Tomistoma)","specimen":"","origin":"","location":"Harvard","dcl_a":678,"dcl_b":null,"mhw":null,"mcw":null,"iow":null,"tl":null,"tl_est":"","mandible":null,"weight":null,"teeth":null,"notes":"","source":""},{"id":31,"species":"Crocodylus niloticus","common":"Nile","specimen":"","origin":"Lake Chomo, Ethiopia","location":"Arba Minch, Ethiopia","dcl_a":673,"dcl_b":null,"mhw":421,"mcw":null,"iow":null,"tl":540,"tl_est":"Y","mandible":85.8,"weight":null,"teeth":null,"notes":109.4,"source":4.936},{"id":32,"species":"Crocodylus porosus","common":"Saltwater (Estuarine)","specimen":"Old Charlie","origin":"Northern Territory, Australia","location":"Darwin, NT, Australia","dcl_a":666,"dcl_b":null,"mhw":480,"mcw":235,"iow":75,"tl":615,"tl_est":"N","mandible":null,"weight":null,"teeth":null,"notes":114.6,"source":5.366},{"id":33,"species":"Crocodylus porosus","common":"Saltwater (Estuarine)","specimen":"","origin":"","location":"Paris Museum","dcl_a":664,"dcl_b":null,"mhw":392,"mcw":null,"iow":null,"tl":null,"tl_est":"","mandible":84,"weight":null,"teeth":null,"notes":105.6,"source":""},{"id":34,"species":"Crocodylus porosus","common":"Saltwater (Estuarine)","specimen":"","origin":"Bhitakanika, India","location":"Wildlife department, India","dcl_a":660,"dcl_b":null,"mhw":402,"mcw":null,"iow":null,"tl":510,"tl_est":"Y","mandible":null,"weight":null,"teeth":null,"notes":106.2,"source":4.802},{"id":35,"species":"Crocodylus porosus","common":"Saltwater (Estuarine)","specimen":"","origin":"Luzon, Phillipines","location":"MCZ, Harvard","dcl_a":660,"dcl_b":null,"mhw":null,"mcw":null,"iow":null,"tl":null,"tl_est":"","mandible":84.4,"weight":null,"teeth":null,"notes":"","source":""},{"id":36,"species":"Gavialis gangeticus","common":"Indian Gharial","specimen":"","origin":"India","location":"MMNB Berlin","dcl_a":655,"dcl_b":null,"mhw":null,"mcw":null,"iow":null,"tl":null,"tl_est":"","mandible":null,"weight":null,"teeth":null,"notes":"","source":""},{"id":37,"species":"Crocodylus intermedius","common":"Orinoco","specimen":"","origin":"South America ","location":"Senckenberg Museum","dcl_a":651,"dcl_b":null,"mhw":null,"mcw":null,"iow":null,"tl":null,"tl_est":"","mandible":null,"weight":null,"teeth":null,"notes":"","source":""},{"id":38,"species":"Crocodylus porosus","common":"Saltwater (Estuarine)","specimen":"Cassius","origin":"Finniss River, NT, Australia (captured 1984)","location":"Australian collection","dcl_a":650,"dcl_b":null,"mhw":460,"mcw":null,"iow":null,"tl":548,"tl_est":"N","mandible":null,"weight":1000,"teeth":null,"notes":"Largest croc held alive in captivity. Hatched wild ~1900. Captured 1984 Finniss River, NT. Ascension 01/11/2024. Weight ~1000 kg. Guinness World Record holder. Skull missing approx 30 mm of tip; TL straight-line measurement does not include 15-25 cm of missing tail. Skull is skin-on (not dried/cleaned). ADJUSTED RATIO SCENARIOS (for fairer comparison to W&W literature, which uses dried skulls): Hypothesised full DCL 680 + MHW 460 + TL 570 → Combined Ratio 5.00 (matches Mary River). Hypothesised full DCL 680 + MHW 470 + TL 560 → Combined Ratio 4.87. 4% skull-shrinkage adjustment (skin-on to dried equivalent): DCL 652.8 + MHW 451.2 + TL 570 → Combined Ratio 5.16, HL:TL 8.73, W:L 69.1% (sits cleanly in big-specimen cluster: Edgar 5.49, Lolong/Old Charlie 5.37, Mary River 5.00).","source":"Australian collection official record card"},{"id":39,"species":"Crocodylus porosus","common":"Saltwater (Estuarine)","specimen":"Charley","origin":"Mary River, Australia ","location":"Darwin Crocodile Farm, NT, Australia","dcl_a":644,"dcl_b":null,"mhw":463,"mcw":null,"iow":null,"tl":600,"tl_est":"Y","mandible":null,"weight":null,"teeth":null,"notes":110.7,"source":5.42},{"id":40,"species":"Crocodylus porosus","common":"Saltwater (Estuarine)","specimen":"","origin":"Bhitakanika, India","location":"","dcl_a":628,"dcl_b":null,"mhw":420,"mcw":null,"iow":null,"tl":540,"tl_est":"Y","mandible":null,"weight":null,"teeth":null,"notes":104.8,"source":5.153},{"id":41,"species":"Crocodylus cataphractus","common":"African Slender-snouted","specimen":"","origin":"Africa","location":"Paris Museum","dcl_a":617,"dcl_b":null,"mhw":null,"mcw":null,"iow":null,"tl":null,"tl_est":"","mandible":null,"weight":null,"teeth":null,"notes":"","source":""},{"id":42,"species":"Alligator mississippiensis","common":"American Alligator","specimen":"","origin":"Sebation River, Florida, USA","location":"","dcl_a":600,"dcl_b":null,"mhw":null,"mcw":null,"iow":null,"tl":427,"tl_est":"N","mandible":null,"weight":null,"teeth":null,"notes":"","source":""},{"id":43,"species":"Alligator mississippiensis","common":"American Alligator","specimen":"","origin":"Apalachicola River, Florida, USA","location":"","dcl_a":600,"dcl_b":null,"mhw":null,"mcw":null,"iow":null,"tl":427,"tl_est":"N","mandible":null,"weight":null,"teeth":null,"notes":"","source":""},{"id":44,"species":"Alligator mississippiensis","common":"American Alligator","specimen":"","origin":"Orange Lake, USA","location":"","dcl_a":584,"dcl_b":null,"mhw":null,"mcw":null,"iow":null,"tl":423,"tl_est":"N","mandible":null,"weight":null,"teeth":null,"notes":"","source":""},{"id":45,"species":"Crocodylus porosus","common":"Saltwater (Estuarine)","specimen":"Jaws","origin":"Singapore?","location":"","dcl_a":563,"dcl_b":null,"mhw":null,"mcw":null,"iow":null,"tl":513,"tl_est":"N","mandible":null,"weight":null,"teeth":null,"notes":"","source":""},{"id":46,"species":"Crocodylus porosus","common":"Saltwater (Estuarine)","specimen":"Maximo","origin":"Australia ","location":"St. Augustine Alligator Farm, Florida","dcl_a":550,"dcl_b":null,"mhw":null,"mcw":null,"iow":null,"tl":465,"tl_est":"N","mandible":null,"weight":null,"teeth":null,"notes":"","source":""},{"id":47,"species":"Crocodylus intermedius","common":"Orinoco","specimen":"","origin":"South America ","location":"","dcl_a":null,"dcl_b":null,"mhw":null,"mcw":null,"iow":null,"tl":null,"tl_est":"","mandible":null,"weight":null,"teeth":null,"notes":"","source":""},{"id":48,"species":"Gavialis gangeticus","common":"Indian Gharial","specimen":"","origin":"India","location":"","dcl_a":null,"dcl_b":null,"mhw":null,"mcw":null,"iow":null,"tl":null,"tl_est":"","mandible":null,"weight":null,"teeth":null,"notes":"","source":""}];
+
+let FILTERED = [];
+let sortKey = 'dcl_a';
+let sortDir = -1;
+
+function init() {
+  populateSpeciesFilter();
+  renderTopPanels();
+  applyFilters();
+}
+
+function populateSpeciesFilter() {
+  const sel = document.getElementById('filter-species');
+  const species = [...new Set(DATA.map(d => d.species).filter(Boolean))].sort();
+  species.forEach(s => {
+    const o = document.createElement('option');
+    o.value = s; o.textContent = s;
+    sel.appendChild(o);
+  });
+}
+
+function renderTopPanels() {
+  document.getElementById('stat-total').textContent = DATA.length;
+  const species = [...new Set(DATA.map(d => d.species).filter(Boolean))];
+  document.getElementById('stat-species').textContent = species.length + ' species represented';
+
+  // Top 5 longest
+  const longest = DATA.filter(d => typeof d.dcl_a === 'number').sort((a,b) => b.dcl_a - a.dcl_a).slice(0, 5);
+  document.getElementById('top5-longest').innerHTML = longest.map(d => `
+    <li>
+      <div class="name"><strong>${d.specimen || d.species}</strong>
+        <small>${d.species}${d.location ? ' &mdash; ' + d.location : (d.origin ? ' &mdash; ' + d.origin : '')}</small>
+      </div>
+      <span class="num">${d.dcl_a} mm</span>
+    </li>
+  `).join('');
+
+  // Top 5 widest
+  const widest = DATA.filter(d => typeof d.mhw === 'number').sort((a,b) => b.mhw - a.mhw).slice(0, 5);
+  document.getElementById('top5-widest').innerHTML = widest.map(d => `
+    <li>
+      <div class="name"><strong>${d.specimen || d.species}</strong>
+        <small>${d.species}${d.location ? ' &mdash; ' + d.location : (d.origin ? ' &mdash; ' + d.origin : '')}</small>
+      </div>
+      <span class="num">${d.mhw} mm</span>
+    </li>
+  `).join('');
+}
+
+function applyFilters() {
+  const sp = document.getElementById('filter-species').value;
+  FILTERED = DATA.filter(d => !sp || d.species === sp);
+  sortAndRender();
+}
+
+function sortAndRender() {
+  FILTERED.sort((a, b) => {
+    const va = a[sortKey], vb = b[sortKey];
+    const na = (va === null || va === undefined || va === '');
+    const nb = (vb === null || vb === undefined || vb === '');
+    if (na && nb) return 0;
+    if (na) return 1;
+    if (nb) return -1;
+    if (typeof va === 'number' && typeof vb === 'number') return (va - vb) * sortDir;
+    return String(va).localeCompare(String(vb)) * sortDir;
+  });
+  renderRows();
+}
+
+function fmt(v, decimals=0) {
+  if (v === null || v === undefined || v === '') return '';
+  if (typeof v === 'number') return v.toFixed(decimals);
+  return v;
+}
+
+function renderRows() {
+  const tb = document.getElementById('data-rows');
+  tb.innerHTML = '';
+  FILTERED.forEach(d => {
+    const tr = document.createElement('tr');
+    const tlSuffix = d.tl_est === 'Y' ? ' <span class="est-tag">(est)</span>' : '';
+    tr.innerHTML = `
+      <td class="species">${d.species ?? ''}<br><small style="color: #6B6557;">${d.common ?? ''}</small></td>
+      <td class="specimen">${d.specimen ?? ''}</td>
+      <td>${d.origin ?? ''}</td>
+      <td>${d.location ?? ''}</td>
+      <td class="num headline">${fmt(d.dcl_a)}</td>
+      <td class="num">${fmt(d.dcl_b)}</td>
+      <td class="num headline">${fmt(d.mhw)}</td>
+      <td class="num">${fmt(d.mcw)}</td>
+      <td class="num">${fmt(d.iow)}</td>
+      <td class="num headline">${fmt(d.tl)}${tlSuffix}</td>
+      <td class="num">${fmt(d.mandible, 1)}</td>
+      <td class="num">${fmt(d.weight, 1)}</td>
+      <td class="notes">
+        ${d.notes ? `<details class="detail-row"><summary>Notes/Source</summary><strong>Notes:</strong> ${d.notes}<br><br><strong>Source:</strong> ${d.source}</details>` : `<span>${d.source || ''}</span>`}
+      </td>
+    `;
+    tb.appendChild(tr);
+  });
+  document.getElementById('visible-count').textContent = FILTERED.length;
+  document.getElementById('total-count').textContent = DATA.length;
+
+  document.querySelectorAll('thead th').forEach(th => {
+    th.classList.remove('sort-asc', 'sort-desc');
+    if (th.dataset.sort === sortKey) th.classList.add(sortDir === 1 ? 'sort-asc' : 'sort-desc');
+  });
+}
+
+document.querySelectorAll('thead th[data-sort]').forEach(th => {
+  th.addEventListener('click', () => {
+    const k = th.dataset.sort;
+    if (k === sortKey) sortDir = -sortDir;
+    else { sortKey = k; sortDir = (k === 'species' || k === 'specimen' || k === 'origin' || k === 'location') ? 1 : -1; }
+    sortAndRender();
+  });
+});
+
+document.getElementById('filter-species').addEventListener('change', applyFilters);
+
+init();
+</script>
+</body>
+</html>
