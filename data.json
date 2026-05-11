@@ -37,7 +37,7 @@
     "weight": null,
     "teeth": null,
     "notes": "",
-    "source": ""
+    "source": "Muller (1927) in Whitaker & Whitaker 2008"
   },
   {
     "id": 3,
@@ -57,7 +57,7 @@
     "weight": null,
     "teeth": null,
     "notes": "",
-    "source": ""
+    "source": "Muller (1927) in Whitaker & Whitaker 2008"
   },
   {
     "id": 4,
@@ -77,7 +77,7 @@
     "weight": null,
     "teeth": null,
     "notes": "",
-    "source": ""
+    "source": "Muller (1927) in Whitaker & Whitaker 2008"
   },
   {
     "id": 5,
@@ -97,7 +97,7 @@
     "weight": null,
     "teeth": null,
     "notes": "",
-    "source": ""
+    "source": "Muller (1927) in Whitaker & Whitaker 2008"
   },
   {
     "id": 6,
@@ -117,7 +117,7 @@
     "weight": null,
     "teeth": null,
     "notes": "",
-    "source": ""
+    "source": "Paolo Piras (pers. comm.) in Whitaker & Whitaker 2008"
   },
   {
     "id": 7,
@@ -136,8 +136,8 @@
     "mandible": 98.3,
     "weight": null,
     "teeth": null,
-    "notes": 124,
-    "source": ""
+    "notes": "",
+    "source": "Peter Taylor (pers. comm.) in Whitaker & Whitaker 2008"
   },
   {
     "id": 8,
@@ -157,7 +157,7 @@
     "weight": null,
     "teeth": null,
     "notes": "",
-    "source": ""
+    "source": "Paolo Piras (pers. comm.) in Whitaker & Whitaker 2008"
   },
   {
     "id": 9,
@@ -177,7 +177,7 @@
     "weight": null,
     "teeth": null,
     "notes": "",
-    "source": ""
+    "source": "Paolo Piras (pers. comm.) in Whitaker & Whitaker 2008"
   },
   {
     "id": 10,
@@ -197,7 +197,7 @@
     "weight": null,
     "teeth": null,
     "notes": "",
-    "source": ""
+    "source": "Muller (1927) in Whitaker & Whitaker 2008"
   },
   {
     "id": 11,
@@ -216,8 +216,8 @@
     "mandible": null,
     "weight": null,
     "teeth": null,
-    "notes": "",
-    "source": ""
+    "notes": "Reported by Sudhakar Kar 2006a; original DCL noted as ~74 cm with uncertainty.",
+    "source": "Sudhakar Kar (2006a) in Whitaker & Whitaker 2008"
   },
   {
     "id": 12,
@@ -237,7 +237,7 @@
     "weight": null,
     "teeth": null,
     "notes": "",
-    "source": ""
+    "source": "Paolo Piras (pers. comm.) in Whitaker & Whitaker 2008"
   },
   {
     "id": 13,
@@ -256,8 +256,8 @@
     "mandible": null,
     "weight": null,
     "teeth": null,
-    "notes": 119.1,
-    "source": 5.877
+    "notes": "W&W reported ratio: 1:9.0",
+    "source": "RW pers. obs. in Whitaker & Whitaker 2008"
   },
   {
     "id": 14,
@@ -276,8 +276,8 @@
     "mandible": 92,
     "weight": null,
     "teeth": null,
-    "notes": 112,
-    "source": ""
+    "notes": "",
+    "source": "Kaushik Deuti (pers. comm.) in Whitaker & Whitaker 2008"
   },
   {
     "id": 15,
@@ -316,8 +316,8 @@
     "mandible": null,
     "weight": null,
     "teeth": null,
-    "notes": "",
-    "source": ""
+    "notes": "W&W reported ratio: 1:8.6",
+    "source": "RW pers. obs. in Whitaker & Whitaker 2008"
   },
   {
     "id": 17,
@@ -336,8 +336,8 @@
     "mandible": 91.4,
     "weight": null,
     "teeth": null,
-    "notes": "",
-    "source": ""
+    "notes": "33ft length is myth/anecdote.",
+    "source": "private collector (pers. comm.) in Whitaker & Whitaker 2008"
   },
   {
     "id": 18,
@@ -357,7 +357,7 @@
     "weight": null,
     "teeth": null,
     "notes": "",
-    "source": ""
+    "source": "Banks (1931) in Whitaker & Whitaker 2008"
   },
   {
     "id": 19,
@@ -376,8 +376,8 @@
     "mandible": 86,
     "weight": null,
     "teeth": null,
-    "notes": 106,
-    "source": ""
+    "notes": "",
+    "source": "Kaushik Deuti (pers. comm.) in Whitaker & Whitaker 2008"
   },
   {
     "id": 20,
@@ -396,8 +396,8 @@
     "mandible": null,
     "weight": null,
     "teeth": null,
-    "notes": "",
-    "source": ""
+    "notes": "Cranium only - no lower jaw. Slightly longer than Edgar but narrower. Likely >6m TL.",
+    "source": "Fukuda et al. 2018 - Raffles Bulletin of Zoology 66:810-813"
   },
   {
     "id": 21,
@@ -417,7 +417,7 @@
     "weight": null,
     "teeth": null,
     "notes": "",
-    "source": ""
+    "source": "Paolo Piras (pers. comm.) in Whitaker & Whitaker 2008"
   },
   {
     "id": 22,
@@ -437,7 +437,7 @@
     "weight": null,
     "teeth": null,
     "notes": "",
-    "source": ""
+    "source": "Paolo Piras (pers. comm.) in Whitaker & Whitaker 2008"
   },
   {
     "id": 23,
@@ -456,8 +456,8 @@
     "mandible": null,
     "weight": null,
     "teeth": 2,
-    "notes": 122.1,
-    "source": 5.487
+    "notes": "Widest skull ever recorded. From Hanitsch (1908): '22 ft monster'. Two teeth remaining.",
+    "source": "Fukuda et al. 2018 - Raffles Bulletin of Zoology 66:810-813"
   },
   {
     "id": 24,
@@ -476,8 +476,8 @@
     "mandible": null,
     "weight": null,
     "teeth": null,
-    "notes": 115,
-    "source": 5.365
+    "notes": "Captured Philippines 2011. Guinness Record (largest croc in captivity). W&W reported ratio: 1:8.81",
+    "source": "Britton et al. 2012 - Herpetological Review 43(4):541-546"
   },
   {
     "id": 25,
@@ -497,7 +497,7 @@
     "weight": null,
     "teeth": null,
     "notes": "",
-    "source": ""
+    "source": "Paolo Piras (pers. comm.) in Whitaker & Whitaker 2008"
   },
   {
     "id": 26,
@@ -516,8 +516,8 @@
     "mandible": null,
     "weight": null,
     "teeth": null,
-    "notes": "",
-    "source": ""
+    "notes": "Captive specimen 'Gomek'.",
+    "source": "J. Brueggen (pers. comm.) in Whitaker & Whitaker 2008"
   },
   {
     "id": 27,
@@ -536,8 +536,8 @@
     "mandible": 86,
     "weight": null,
     "teeth": null,
-    "notes": 112.7,
-    "source": 5.004
+    "notes": "W&W reported ratio: 1:8.1",
+    "source": "AB, RW pers. obs. in Whitaker & Whitaker 2008"
   },
   {
     "id": 28,
@@ -556,8 +556,8 @@
     "mandible": 87,
     "weight": null,
     "teeth": null,
-    "notes": 109,
-    "source": 4.954
+    "notes": "W&W reported ratio: 1:7.8",
+    "source": "RW pers. obs. in Whitaker & Whitaker 2008"
   },
   {
     "id": 29,
@@ -576,8 +576,8 @@
     "mandible": null,
     "weight": null,
     "teeth": null,
-    "notes": 109.3,
-    "source": 4.941
+    "notes": "W&W reported ratio: 1:7.8",
+    "source": "RW pers. obs. in Whitaker & Whitaker 2008"
   },
   {
     "id": 30,
@@ -597,7 +597,7 @@
     "weight": null,
     "teeth": null,
     "notes": "",
-    "source": ""
+    "source": "Paolo Piras (pers. comm.) MCZ Harvard, in Whitaker & Whitaker 2008"
   },
   {
     "id": 31,
@@ -616,8 +616,8 @@
     "mandible": 85.8,
     "weight": null,
     "teeth": null,
-    "notes": 109.4,
-    "source": 4.936
+    "notes": "W&W reported ratio: 1:7.8",
+    "source": "RW pers. obs. in Whitaker & Whitaker 2008"
   },
   {
     "id": 32,
@@ -636,8 +636,8 @@
     "mandible": null,
     "weight": null,
     "teeth": null,
-    "notes": 114.6,
-    "source": 5.366
+    "notes": "Reference specimen used for comparison (Webb & Messel 1978).",
+    "source": "Fukuda et al. 2018 - Raffles Bulletin of Zoology 66:810-813"
   },
   {
     "id": 33,
@@ -656,8 +656,8 @@
     "mandible": 84,
     "weight": null,
     "teeth": null,
-    "notes": 105.6,
-    "source": ""
+    "notes": "",
+    "source": "Ivan Ineich (pers. comm.) in Whitaker & Whitaker 2008"
   },
   {
     "id": 34,
@@ -676,8 +676,8 @@
     "mandible": null,
     "weight": null,
     "teeth": null,
-    "notes": 106.2,
-    "source": 4.802
+    "notes": "W&W reported ratio: 1:7.7",
+    "source": "RW pers. obs. in Whitaker & Whitaker 2008"
   },
   {
     "id": 35,
@@ -696,8 +696,8 @@
     "mandible": 84.4,
     "weight": null,
     "teeth": null,
-    "notes": "",
-    "source": ""
+    "notes": "29ft length is myth/anecdote.",
+    "source": "Greer (1974) in Whitaker & Whitaker 2008"
   },
   {
     "id": 36,
@@ -717,7 +717,7 @@
     "weight": null,
     "teeth": null,
     "notes": "",
-    "source": ""
+    "source": "Paolo Piras (pers. comm.) in Whitaker & Whitaker 2008"
   },
   {
     "id": 37,
@@ -737,7 +737,7 @@
     "weight": null,
     "teeth": null,
     "notes": "",
-    "source": ""
+    "source": "Paolo Piras (pers. comm.) in Whitaker & Whitaker 2008"
   },
   {
     "id": 38,
@@ -776,8 +776,8 @@
     "mandible": null,
     "weight": null,
     "teeth": null,
-    "notes": 110.7,
-    "source": 5.42
+    "notes": "W&W reported ratio: 1:9.3 (estimated TL 6.0 m).",
+    "source": "Webb and Messel (1978) in Whitaker & Whitaker 2008"
   },
   {
     "id": 40,
@@ -796,8 +796,8 @@
     "mandible": null,
     "weight": null,
     "teeth": null,
-    "notes": 104.8,
-    "source": 5.153
+    "notes": "W&W reported ratio: 1:8.5",
+    "source": "Orissa Wildlife Dept. (pers. obs.) in Whitaker & Whitaker 2008"
   },
   {
     "id": 41,
@@ -817,7 +817,7 @@
     "weight": null,
     "teeth": null,
     "notes": "",
-    "source": ""
+    "source": "Paolo Piras (pers. comm.) in Whitaker & Whitaker 2008"
   },
   {
     "id": 42,
@@ -836,8 +836,8 @@
     "mandible": null,
     "weight": null,
     "teeth": null,
-    "notes": "",
-    "source": ""
+    "notes": "W&W reported ratio: 1:7.0",
+    "source": "Barbour (1933) in Whitaker & Whitaker 2008"
   },
   {
     "id": 43,
@@ -856,8 +856,8 @@
     "mandible": null,
     "weight": null,
     "teeth": null,
-    "notes": "",
-    "source": ""
+    "notes": "W&W reported ratio: 1:7.1",
+    "source": "Woodward et al. (1995) in Whitaker & Whitaker 2008 - Apalachicola R., Florida"
   },
   {
     "id": 44,
@@ -876,8 +876,8 @@
     "mandible": null,
     "weight": null,
     "teeth": null,
-    "notes": "",
-    "source": ""
+    "notes": "W&W reported ratio: 1:7.2",
+    "source": "Woodward et al. (1995) in Whitaker & Whitaker 2008"
   },
   {
     "id": 45,
@@ -896,8 +896,8 @@
     "mandible": null,
     "weight": null,
     "teeth": null,
-    "notes": "",
-    "source": ""
+    "notes": "Captive specimen 'Jaws' at Madras Crocodile Bank. W&W reported ratio: 1:9.1",
+    "source": "RW pers. obs. in Whitaker & Whitaker 2008"
   },
   {
     "id": 46,
@@ -916,8 +916,8 @@
     "mandible": null,
     "weight": null,
     "teeth": null,
-    "notes": "",
-    "source": ""
+    "notes": "Captive specimen 'Maximo'. W&W reported ratio: 1:8.5",
+    "source": "J. Brueggen (pers. comm.) in Whitaker & Whitaker 2008"
   },
   {
     "id": 47,

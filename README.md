@@ -4,9 +4,7 @@ An open citizen-science database of the world's biggest crocodilian skulls, with
 
 ## Live site
 
-Once published via GitHub Pages: `https://USERNAME.github.io/largest-crocodile-skulls/`
-
-(replace USERNAME with the GitHub account hosting the repo)
+[https://gommix1979.github.io/largest-crocodile-skulls/](https://gommix1979.github.io/largest-crocodile-skulls/)
 
 ## Why this exists
 
@@ -60,7 +58,7 @@ Every specimen must have a verifiable source. Anecdotes and unverified claims wo
 
 If you use this data in research or publication, please cite as:
 
-> *Largest Crocodile Skulls: an open citizen-science database*. Available at: https://USERNAME.github.io/largest-crocodile-skulls/
+> *Largest Crocodile Skulls: an open citizen-science database*. Available at: https://gommix1979.github.io/largest-crocodile-skulls/
 
 And cite the original sources for individual records (Whitaker & Whitaker 2008, Fukuda et al. 2018, etc.) where applicable.
 

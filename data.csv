@@ -1,49 +1,49 @@
 ID,Species,Common Name,Specimen Name,Origin,Current Location,DCL_A_Curve_mm,DCL_B_Straight_mm,MHW_mm,MCW_mm,IOW_mm,TL_cm,TL_estimated,Mandible_cm,Weight_kg,Teeth_Num,Notes,Source
 1,Tomistoma schlegelii,False Gharial (Tomistoma),,,British Museum,840,,,,,,,104,,,Largest crocodilian skull on record. Slender Tomistoma morphology - very different shape from C. porosus despite enormous DCL.,"private contributor, C. McCarthy (pers. comm.) in Whitaker & Whitaker 2008"
-2,Tomistoma schlegelii,False Gharial (Tomistoma),,"Central Borneo, Indonesia",Munich Museum,815,,,,,,,,,,,
-3,Gavialis gangeticus,Indian Gharial,,India,Munich Museum,773,,,,,,,,,,,
-4,Tomistoma schlegelii,False Gharial (Tomistoma),,"Central Borneo, Indonesia",Munich Museum,770,,,,,,,,,,,
-5,Tomistoma schlegelii,False Gharial (Tomistoma),,Borneo,Munich Museum,765,,,,,,,,,,,
-6,Tomistoma schlegelii,False Gharial (Tomistoma),,,"AMNH, New York",763,,,,,,,,,,,
-7,Crocodylus porosus,Saltwater (Estuarine),,Cambodia,Paris Museum,760,,480,,,,,98.3,,,124,
-8,Tomistoma schlegelii,False Gharial (Tomistoma),,,Brussells Museum,759,,,,,,,,,,,
-9,Gavialis gangeticus,Indian Gharial,,India,Parise Museum,753,,,,,,,,,,,
-10,Gavialis gangeticus,Indian Gharial,,India,Munich Museum,750,,,,,,,,,,,
-11,Crocodylus porosus,Saltwater (Estuarine),,,Lennongrad?,740,,,,,,,,,,,
-12,Crocodylus acutus,American,,S.America,"AMNH, New York",735,,,,,,,,,,,
-13,Crocodylus porosus,Saltwater (Estuarine),,"Bhitakanika, India",Raja of Kanika,733,,458,,,700,Y,,,,119.1,5.877
-14,Crocodylus porosus,Saltwater (Estuarine),,India,"India Museum, Kulkutta",730,,390,,,,,92,,,112,
+2,Tomistoma schlegelii,False Gharial (Tomistoma),,"Central Borneo, Indonesia",Munich Museum,815,,,,,,,,,,,Muller (1927) in Whitaker & Whitaker 2008
+3,Gavialis gangeticus,Indian Gharial,,India,Munich Museum,773,,,,,,,,,,,Muller (1927) in Whitaker & Whitaker 2008
+4,Tomistoma schlegelii,False Gharial (Tomistoma),,"Central Borneo, Indonesia",Munich Museum,770,,,,,,,,,,,Muller (1927) in Whitaker & Whitaker 2008
+5,Tomistoma schlegelii,False Gharial (Tomistoma),,Borneo,Munich Museum,765,,,,,,,,,,,Muller (1927) in Whitaker & Whitaker 2008
+6,Tomistoma schlegelii,False Gharial (Tomistoma),,,"AMNH, New York",763,,,,,,,,,,,Paolo Piras (pers. comm.) in Whitaker & Whitaker 2008
+7,Crocodylus porosus,Saltwater (Estuarine),,Cambodia,Paris Museum,760,,480,,,,,98.3,,,,Peter Taylor (pers. comm.) in Whitaker & Whitaker 2008
+8,Tomistoma schlegelii,False Gharial (Tomistoma),,,Brussells Museum,759,,,,,,,,,,,Paolo Piras (pers. comm.) in Whitaker & Whitaker 2008
+9,Gavialis gangeticus,Indian Gharial,,India,Parise Museum,753,,,,,,,,,,,Paolo Piras (pers. comm.) in Whitaker & Whitaker 2008
+10,Gavialis gangeticus,Indian Gharial,,India,Munich Museum,750,,,,,,,,,,,Muller (1927) in Whitaker & Whitaker 2008
+11,Crocodylus porosus,Saltwater (Estuarine),,,Lennongrad?,740,,,,,,,,,,Reported by Sudhakar Kar 2006a; original DCL noted as ~74 cm with uncertainty.,Sudhakar Kar (2006a) in Whitaker & Whitaker 2008
+12,Crocodylus acutus,American,,S.America,"AMNH, New York",735,,,,,,,,,,,Paolo Piras (pers. comm.) in Whitaker & Whitaker 2008
+13,Crocodylus porosus,Saltwater (Estuarine),,"Bhitakanika, India",Raja of Kanika,733,,458,,,700,Y,,,,W&W reported ratio: 1:9.0,RW pers. obs. in Whitaker & Whitaker 2008
+14,Crocodylus porosus,Saltwater (Estuarine),,India,"India Museum, Kulkutta",730,,390,,,,,92,,,,Kaushik Deuti (pers. comm.) in Whitaker & Whitaker 2008
 15,Crocodylus porosus,Saltwater (Estuarine),Fly River Giant,"Fly River, Papua New Guinea",Australia (collection TBC),728,,371,219,80,,,91.6,,,FLY RIVER GIANT. Possibly the largest saltwater crocodile skull in Australia. Measurements verified by Roger Matthews. Some millimetres missing from rear of bottom jaw where it was butchered off; missing portion not added to skull total length. Skull total length (snout to back of mandible): 94.6 cm. Skull weight: 21.4 kg. ADDITIONAL MEASUREMENTS NOT IN STANDARD FIELDS: Snout/nose width 17.4 cm; Width across squamosal 'horns' (MCW): 21.9 cm; Mandible width: 6 cm; Width between bottom jaw hinges: 17.4 cm; Snout width horizontal at tip: 7.7 cm; Snout width vertical at tip: 5.8 cm; Height of skull: 30.3 cm; Mandible front teeth diameter: 2.9 cm; Top jaw main teeth diameter: 3.1 cm; Vertebrate (occipital) condyle ball: 4.3 x 5.1 cm; Back of horns to tip of nose: 76.1 cm. Live-animal TL unknown - skull-only specimen. Estimated live TL from Combined Ratio (5.4 multiplier): ~5.94 m. Skull is unusually slender (W:L ~51%) for a C. porosus this large - on the lower end of saltie range (typical 64-74%).,Verified by Roger Matthews; provided by anonymous contributor (Australian collection)
-16,Crocodylus porosus,Saltwater (Estuarine),,"Obo, Fly River, Papua New Guinea",Wildlife department PNG,720,,,,,620,N,,,,,
-17,Crocodylus porosus,Saltwater (Estuarine),,"Bengal, India",British Museum,711,,,,,,,91.4,,,,
-18,Crocodylus porosus,Saltwater (Estuarine),,"Sarawak, Malaysia",Sarawak museum,711,,,,,,,,,,,
-19,Crocodylus porosus,Saltwater (Estuarine),,India,Indian Museum,710,,350,,,,,86,,,106,
-20,Crocodylus porosus,Saltwater (Estuarine),Giryu,Unknown,"Lee Kong Chian Natural History Museum, Singapore",706,,,205,67,,,,,,,
-21,Tomistoma schlegelii,False Gharial (Tomistoma),,,MMNB Berlin,704,,,,,,,,,,,
-22,Gavialis gangeticus,Indian Gharial,,India,,703,,,,,,,,,,,
-23,Crocodylus porosus,Saltwater (Estuarine),Edgar,"Java, Indonesia (1887)","Lee Kong Chian Natural History Museum, Singapore",701,682,520,240,80,670,Y,,,2,122.1,5.487
-24,Crocodylus porosus,Saltwater (Estuarine),,Lolong,,700,694,450,228,84,617,,,,,115,5.365
-25,Gavialis gangeticus,Indian Gharial,,India,"AMNH, New York",697,,,,,,,,,,,
-26,Crocodylus porosus,Saltwater (Estuarine),Gomek,"Fly River, Papua New Guinea","St Augustine, Florida",690,,,,,534,N,,,,,
-27,Crocodylus porosus,Saltwater (Estuarine),Mary River specimen,"Mary River, Australia ","Corroberee, NT Australia",688,,439,,,564,N,86,,,112.7,5.004
-28,Crocodylus niloticus,Nile,,"Lake Chomo, Ethiopia ","Arba Minch, Ethiopia",686,,404,,,540,Y,87,,,109,4.954
-29,Crocodylus niloticus,Nile,,"Lake Chomo, Ethiopia ","Arba Minch, Ethiopia",679,,414,,,540,Y,,,,109.3,4.941
-30,Tomistoma schlegelii,False Gharial (Tomistoma),,,Harvard,678,,,,,,,,,,,
-31,Crocodylus niloticus,Nile,,"Lake Chomo, Ethiopia","Arba Minch, Ethiopia",673,,421,,,540,Y,85.8,,,109.4,4.936
-32,Crocodylus porosus,Saltwater (Estuarine),Old Charlie,"Northern Territory, Australia","Darwin, NT, Australia",666,,480,235,75,615,N,,,,114.6,5.366
-33,Crocodylus porosus,Saltwater (Estuarine),,,Paris Museum,664,,392,,,,,84,,,105.6,
-34,Crocodylus porosus,Saltwater (Estuarine),,"Bhitakanika, India","Wildlife department, India",660,,402,,,510,Y,,,,106.2,4.802
-35,Crocodylus porosus,Saltwater (Estuarine),,"Luzon, Phillipines","MCZ, Harvard",660,,,,,,,84.4,,,,
-36,Gavialis gangeticus,Indian Gharial,,India,MMNB Berlin,655,,,,,,,,,,,
-37,Crocodylus intermedius,Orinoco,,South America ,Senckenberg Museum,651,,,,,,,,,,,
+16,Crocodylus porosus,Saltwater (Estuarine),,"Obo, Fly River, Papua New Guinea",Wildlife department PNG,720,,,,,620,N,,,,W&W reported ratio: 1:8.6,RW pers. obs. in Whitaker & Whitaker 2008
+17,Crocodylus porosus,Saltwater (Estuarine),,"Bengal, India",British Museum,711,,,,,,,91.4,,,33ft length is myth/anecdote.,private collector (pers. comm.) in Whitaker & Whitaker 2008
+18,Crocodylus porosus,Saltwater (Estuarine),,"Sarawak, Malaysia",Sarawak museum,711,,,,,,,,,,,Banks (1931) in Whitaker & Whitaker 2008
+19,Crocodylus porosus,Saltwater (Estuarine),,India,Indian Museum,710,,350,,,,,86,,,,Kaushik Deuti (pers. comm.) in Whitaker & Whitaker 2008
+20,Crocodylus porosus,Saltwater (Estuarine),Giryu,Unknown,"Lee Kong Chian Natural History Museum, Singapore",706,,,205,67,,,,,,Cranium only - no lower jaw. Slightly longer than Edgar but narrower. Likely >6m TL.,Fukuda et al. 2018 - Raffles Bulletin of Zoology 66:810-813
+21,Tomistoma schlegelii,False Gharial (Tomistoma),,,MMNB Berlin,704,,,,,,,,,,,Paolo Piras (pers. comm.) in Whitaker & Whitaker 2008
+22,Gavialis gangeticus,Indian Gharial,,India,,703,,,,,,,,,,,Paolo Piras (pers. comm.) in Whitaker & Whitaker 2008
+23,Crocodylus porosus,Saltwater (Estuarine),Edgar,"Java, Indonesia (1887)","Lee Kong Chian Natural History Museum, Singapore",701,682,520,240,80,670,Y,,,2,Widest skull ever recorded. From Hanitsch (1908): '22 ft monster'. Two teeth remaining.,Fukuda et al. 2018 - Raffles Bulletin of Zoology 66:810-813
+24,Crocodylus porosus,Saltwater (Estuarine),,Lolong,,700,694,450,228,84,617,,,,,Captured Philippines 2011. Guinness Record (largest croc in captivity). W&W reported ratio: 1:8.81,Britton et al. 2012 - Herpetological Review 43(4):541-546
+25,Gavialis gangeticus,Indian Gharial,,India,"AMNH, New York",697,,,,,,,,,,,Paolo Piras (pers. comm.) in Whitaker & Whitaker 2008
+26,Crocodylus porosus,Saltwater (Estuarine),Gomek,"Fly River, Papua New Guinea","St Augustine, Florida",690,,,,,534,N,,,,Captive specimen 'Gomek'.,J. Brueggen (pers. comm.) in Whitaker & Whitaker 2008
+27,Crocodylus porosus,Saltwater (Estuarine),Mary River specimen,"Mary River, Australia ","Corroberee, NT Australia",688,,439,,,564,N,86,,,W&W reported ratio: 1:8.1,"AB, RW pers. obs. in Whitaker & Whitaker 2008"
+28,Crocodylus niloticus,Nile,,"Lake Chomo, Ethiopia ","Arba Minch, Ethiopia",686,,404,,,540,Y,87,,,W&W reported ratio: 1:7.8,RW pers. obs. in Whitaker & Whitaker 2008
+29,Crocodylus niloticus,Nile,,"Lake Chomo, Ethiopia ","Arba Minch, Ethiopia",679,,414,,,540,Y,,,,W&W reported ratio: 1:7.8,RW pers. obs. in Whitaker & Whitaker 2008
+30,Tomistoma schlegelii,False Gharial (Tomistoma),,,Harvard,678,,,,,,,,,,,"Paolo Piras (pers. comm.) MCZ Harvard, in Whitaker & Whitaker 2008"
+31,Crocodylus niloticus,Nile,,"Lake Chomo, Ethiopia","Arba Minch, Ethiopia",673,,421,,,540,Y,85.8,,,W&W reported ratio: 1:7.8,RW pers. obs. in Whitaker & Whitaker 2008
+32,Crocodylus porosus,Saltwater (Estuarine),Old Charlie,"Northern Territory, Australia","Darwin, NT, Australia",666,,480,235,75,615,N,,,,Reference specimen used for comparison (Webb & Messel 1978).,Fukuda et al. 2018 - Raffles Bulletin of Zoology 66:810-813
+33,Crocodylus porosus,Saltwater (Estuarine),,,Paris Museum,664,,392,,,,,84,,,,Ivan Ineich (pers. comm.) in Whitaker & Whitaker 2008
+34,Crocodylus porosus,Saltwater (Estuarine),,"Bhitakanika, India","Wildlife department, India",660,,402,,,510,Y,,,,W&W reported ratio: 1:7.7,RW pers. obs. in Whitaker & Whitaker 2008
+35,Crocodylus porosus,Saltwater (Estuarine),,"Luzon, Phillipines","MCZ, Harvard",660,,,,,,,84.4,,,29ft length is myth/anecdote.,Greer (1974) in Whitaker & Whitaker 2008
+36,Gavialis gangeticus,Indian Gharial,,India,MMNB Berlin,655,,,,,,,,,,,Paolo Piras (pers. comm.) in Whitaker & Whitaker 2008
+37,Crocodylus intermedius,Orinoco,,South America ,Senckenberg Museum,651,,,,,,,,,,,Paolo Piras (pers. comm.) in Whitaker & Whitaker 2008
 38,Crocodylus porosus,Saltwater (Estuarine),Cassius,"Finniss River, NT, Australia (captured 1984)",Australian collection,650,,460,,,548,N,,1000,,"Largest croc held alive in captivity. Hatched wild ~1900. Captured 1984 Finniss River, NT. Ascension 01/11/2024. Weight ~1000 kg. Guinness World Record holder. Skull missing approx 30 mm of tip; TL straight-line measurement does not include 15-25 cm of missing tail. Skull is skin-on (not dried/cleaned). ADJUSTED RATIO SCENARIOS (for fairer comparison to W&W literature, which uses dried skulls): Hypothesised full DCL 680 + MHW 460 + TL 570 → Combined Ratio 5.00 (matches Mary River). Hypothesised full DCL 680 + MHW 470 + TL 560 → Combined Ratio 4.87. 4% skull-shrinkage adjustment (skin-on to dried equivalent): DCL 652.8 + MHW 451.2 + TL 570 → Combined Ratio 5.16, HL:TL 8.73, W:L 69.1% (sits cleanly in big-specimen cluster: Edgar 5.49, Lolong/Old Charlie 5.37, Mary River 5.00).",Australian collection official record card
-39,Crocodylus porosus,Saltwater (Estuarine),Charley,"Mary River, Australia ","Darwin Crocodile Farm, NT, Australia",644,,463,,,600,Y,,,,110.7,5.42
-40,Crocodylus porosus,Saltwater (Estuarine),,"Bhitakanika, India",,628,,420,,,540,Y,,,,104.8,5.153
-41,Crocodylus cataphractus,African Slender-snouted,,Africa,Paris Museum,617,,,,,,,,,,,
-42,Alligator mississippiensis,American Alligator,,"Sebation River, Florida, USA",,600,,,,,427,N,,,,,
-43,Alligator mississippiensis,American Alligator,,"Apalachicola River, Florida, USA",,600,,,,,427,N,,,,,
-44,Alligator mississippiensis,American Alligator,,"Orange Lake, USA",,584,,,,,423,N,,,,,
-45,Crocodylus porosus,Saltwater (Estuarine),Jaws,Singapore?,,563,,,,,513,N,,,,,
-46,Crocodylus porosus,Saltwater (Estuarine),Maximo,Australia ,"St. Augustine Alligator Farm, Florida",550,,,,,465,N,,,,,
+39,Crocodylus porosus,Saltwater (Estuarine),Charley,"Mary River, Australia ","Darwin Crocodile Farm, NT, Australia",644,,463,,,600,Y,,,,W&W reported ratio: 1:9.3 (estimated TL 6.0 m).,Webb and Messel (1978) in Whitaker & Whitaker 2008
+40,Crocodylus porosus,Saltwater (Estuarine),,"Bhitakanika, India",,628,,420,,,540,Y,,,,W&W reported ratio: 1:8.5,Orissa Wildlife Dept. (pers. obs.) in Whitaker & Whitaker 2008
+41,Crocodylus cataphractus,African Slender-snouted,,Africa,Paris Museum,617,,,,,,,,,,,Paolo Piras (pers. comm.) in Whitaker & Whitaker 2008
+42,Alligator mississippiensis,American Alligator,,"Sebation River, Florida, USA",,600,,,,,427,N,,,,W&W reported ratio: 1:7.0,Barbour (1933) in Whitaker & Whitaker 2008
+43,Alligator mississippiensis,American Alligator,,"Apalachicola River, Florida, USA",,600,,,,,427,N,,,,W&W reported ratio: 1:7.1,"Woodward et al. (1995) in Whitaker & Whitaker 2008 - Apalachicola R., Florida"
+44,Alligator mississippiensis,American Alligator,,"Orange Lake, USA",,584,,,,,423,N,,,,W&W reported ratio: 1:7.2,Woodward et al. (1995) in Whitaker & Whitaker 2008
+45,Crocodylus porosus,Saltwater (Estuarine),Jaws,Singapore?,,563,,,,,513,N,,,,Captive specimen 'Jaws' at Madras Crocodile Bank. W&W reported ratio: 1:9.1,RW pers. obs. in Whitaker & Whitaker 2008
+46,Crocodylus porosus,Saltwater (Estuarine),Maximo,Australia ,"St. Augustine Alligator Farm, Florida",550,,,,,465,N,,,,Captive specimen 'Maximo'. W&W reported ratio: 1:8.5,J. Brueggen (pers. comm.) in Whitaker & Whitaker 2008
 47,Crocodylus intermedius,Orinoco,,South America ,,,,,,,,,,,,,
 48,Gavialis gangeticus,Indian Gharial,,India,,,,,,,,,,,,,
